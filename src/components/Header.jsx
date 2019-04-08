@@ -1,9 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
-import {Button} from 'antd'
+import {Button, Icon} from 'antd'
 
 import './Header.scss'
 import logoImg from '../assets/blog.png'
+import iconfont from '../assets/font/iconfont.js'
+const IconFont = Icon.createFromIconfontCN({
+    scriptUrl:iconfont
+})
 class HeaderComponent extends React.Component{
     constructor(props){
         super(props)
@@ -16,10 +20,10 @@ class HeaderComponent extends React.Component{
             </div>
             <div className="menu">
                 <div className="dropdown">
-                    <Button className="dropbtn">管理</Button>
+                    <Button className="dropbtn"><IconFont type="icon-guanli"/>管理</Button>
                     <div className="dropdown-content">
-                        <Link to="/user/userManager" >用户管理</Link>
-                        <Link to="/user/roleManager" >角色管理</Link>
+                        <Link to="/user/userManager" ><IconFont type="icon-jiaosefenzu"/>用户管理</Link>
+                        <Link to="/user/roleManager" ><IconFont type="icon-jiaoseguanli"/>角色管理</Link>
                     </div>
                 </div>
                 <div className="dropdown">
